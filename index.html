@@ -1,9 +1,77 @@
 <!DOCTYPE html>
 <html>
+  <!--Information for the inside of the page-->
   <head>
-    <title>Title</title>
+    <meta charset="utf-8" />
+    <meta name="description" content="Guess Number Game, with JavaScript" />
+    <meta name="keywords" content="immaculata, ics2o" />
+    <meta name="author" content="Anastasiia Lebedenko" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png" />
+    <link rel="manifest" href="./favicon-1/site.webmanifest" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.purple-deep_purple.min.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Guess Number Game, with JS</title>
   </head>
   <body>
-    <p>Paragraph</p>
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <script src="./js/script.js"></script>
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+      <header class="mdl-layout__header">
+        <div class="mdl-layout__header-row">
+          <span class="mdl-layout-title">Guess Number Game, with JS</span>
+        </div>
+        <h1>
+          <div class="banner">
+            <img src="./images/purpledice.png" alt="Character Image" class="character-img">
+            <div class="quote-text">
+                <p>Guess the number</p>
+            </div>
+          </div>
+        </h1>
+      </header>
+      <main class="mdl-layout__content">
+        <table>
+          <tr>
+            <th>
+              <h2>How to play?</h2>
+              <h4>You have to enter in the textbox any number between 1 and 14. You have to guess what number computer has generated. The program will generate new number every time.</h4>
+            </th>
+          </tr>
+        </table>
+        <!-- Simple Textfield -->
+        <form action="#">
+          <p>Number input</p>
+          <div class="mdl-textfield mdl-js-textfield">
+            <input
+              class="mdl-textfield__input"
+              type="number"
+              pattern="-?[0-9]*(\.[0-9]+)?"
+              id="random-number"
+              step="0"
+              max="14"
+              min="1"
+            />
+            <label class="mdl-textfield__label" for="random-number">Enter your guess ...</label>
+            <span class="mdl-textfield__error">Input is not a number!</span>
+          </div>
+        </form>
+       
+        <!-- Raised button with ripple -->
+        <button
+          class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
+          onclick="calculateGuessNumber()">
+          Guess
+        </button>
+        <br/>
+        <p>
+        <div id="answers">
+        </div>
+        </p>
+      </main>
+    </div>
   </body>
 </html>
